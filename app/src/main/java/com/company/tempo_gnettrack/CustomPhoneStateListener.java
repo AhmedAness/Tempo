@@ -20,6 +20,7 @@ public class CustomPhoneStateListener extends PhoneStateListener {
     public void onSignalStrengthsChanged(SignalStrength signalStrength) {
         super.onSignalStrengthsChanged(signalStrength);
 
+        try {
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -30,6 +31,7 @@ public class CustomPhoneStateListener extends PhoneStateListener {
                 }
             }, 300000);
 
+        }catch (Exception e){}
     }
     public interface Collect{
         void OnSignalChanged();
